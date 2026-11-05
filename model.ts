@@ -1,10 +1,10 @@
 // model.ts
 
 // 1. Literal union type for TaskStatus
-type TaskStatus = "todo" | "in-progress" | "done";
+export type TaskStatus = "todo" | "in-progress" | "done";
 
 // 2. Task interface defining the exact shape of a task
-interface Task {
+export interface Task {
   id: number;
   title: string;
   status: TaskStatus;
@@ -15,11 +15,15 @@ let nextId = 1;
 /**
  * 3. Adds a new task to the array with status "todo".
  */
-function addTask(tasks: Task[], title: string): Task[] {
+export function addTask(
+  tasks: Task[],
+  title: string,
+  status: TaskStatus = "todo"
+): Task[] {
   const newTask: Task = {
     id: nextId++,
     title,
-    status: "todo",
+    status,
   };
   return [...tasks, newTask];
 }
@@ -27,7 +31,7 @@ function addTask(tasks: Task[], title: string): Task[] {
 /**
  * 4. Marks a task as "done" by its ID.
  */
-function completeTask(tasks: Task[], id: number): Task[] {
+export function completeTask(tasks: Task[], id: number): Task[] {
   return tasks.map((task) =>
     task.id === id ? { ...task, status: "done" } : task
   );
@@ -36,7 +40,7 @@ function completeTask(tasks: Task[], id: number): Task[] {
 /**
  * 5. Filters tasks by a valid TaskStatus.
  */
-function filterByStatus(tasks: Task[], status: TaskStatus): Task[] {
+export function filterByStatus(tasks: Task[], status: TaskStatus): Task[] {
   return tasks.filter((task) => task.status === status);
 }
 
@@ -47,14 +51,14 @@ function filterByStatus(tasks: Task[], status: TaskStatus): Task[] {
 /**
  * Removes a task by its ID.
  */
-function deleteTask(tasks: Task[], id: number): Task[] {
+export function deleteTask(tasks: Task[], id: number): Task[] {
   return tasks.filter((task) => task.id !== id);
 }
 
 /**
  * Advances a task through stages: "todo" -> "in-progress" -> "done".
  */
-function advanceTask(tasks: Task[], id: number): Task[] {
+export function advanceTask(tasks: Task[], id: number): Task[] {
   return tasks.map((task) => {
     if (task.id !== id) return task;
 

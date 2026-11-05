@@ -1,27 +1,26 @@
-"use strict";
 // model.ts
 let nextId = 1;
 /**
  * 3. Adds a new task to the array with status "todo".
  */
-function addTask(tasks, title) {
+export function addTask(tasks, title, status = "todo") {
     const newTask = {
         id: nextId++,
         title,
-        status: "todo",
+        status,
     };
     return [...tasks, newTask];
 }
 /**
  * 4. Marks a task as "done" by its ID.
  */
-function completeTask(tasks, id) {
+export function completeTask(tasks, id) {
     return tasks.map((task) => task.id === id ? { ...task, status: "done" } : task);
 }
 /**
  * 5. Filters tasks by a valid TaskStatus.
  */
-function filterByStatus(tasks, status) {
+export function filterByStatus(tasks, status) {
     return tasks.filter((task) => task.status === status);
 }
 // ============================================================================
@@ -30,13 +29,13 @@ function filterByStatus(tasks, status) {
 /**
  * Removes a task by its ID.
  */
-function deleteTask(tasks, id) {
+export function deleteTask(tasks, id) {
     return tasks.filter((task) => task.id !== id);
 }
 /**
  * Advances a task through stages: "todo" -> "in-progress" -> "done".
  */
-function advanceTask(tasks, id) {
+export function advanceTask(tasks, id) {
     return tasks.map((task) => {
         if (task.id !== id)
             return task;
@@ -50,3 +49,4 @@ function advanceTask(tasks, id) {
         return { ...task, status: nextStatus };
     });
 }
+//# sourceMappingURL=model.js.map

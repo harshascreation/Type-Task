@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>TaskFlow</h1>
+            <p>Organize your work. Achieve your goals.</p>
+        </header>
+
+        <main>
+
+            <section class="add-section">
+                <h2>Add New Task</h2>
+
+                <div class="add-row">
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter your task..."
+                    >
+
+                    <select id="status">
+                        <option value="todo">To Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="done">Done</option>
+                    </select>
+
+                    <button id="add">Add Task</button>
+                </div>
+            </section>
+
+            <section class="tasks-section">
+                <h2>My Tasks</h2>
+
+                <div id="chips" class="filters">
+                    <button class="filter active" data-filter="all">All</button>
+                    <button class="filter" data-filter="todo">To Do</button>
+                    <button class="filter" data-filter="in-progress">In Progress</button>
+                    <button class="filter" data-filter="done">Done</button>
+                </div>
+
+                <ul id="list"></ul>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>TaskFlow | Built with HTML, CSS & TypeScript</p>
+        </footer>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>

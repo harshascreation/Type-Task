@@ -1,0 +1,182 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f3ff;
+    color: #25233a;
+}
+
+.container {
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: #7254db;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #777;
+    font-size: 15px;
+}
+
+main {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.add-section {
+    margin-bottom: 35px;
+}
+
+.add-row {
+    display: flex;
+    gap: 10px;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+}
+
+input:focus,
+select:focus {
+    border-color: #7254db;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 11px 17px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#add {
+    background: #7254db;
+    color: white;
+}
+
+#add:hover {
+    background: #5b3fc0;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter {
+    background: #eeeafa;
+    color: #6651b8;
+}
+
+.filter:hover,
+.filter.active {
+    background: #7254db;
+    color: white;
+}
+
+#list {
+    list-style: none;
+}
+
+li.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid #e6e3f0;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.task-info {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.task-status {
+    font-size: 12px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #eeeafa;
+    color: #6651b8;
+}
+
+.task button {
+    background: #7254db;
+    color: white;
+    padding: 8px 12px;
+}
+
+.task button:hover {
+    background: #5b3fc0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #888;
+    font-size: 13px;
+}
+
+@media (max-width: 550px) {
+    .container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    .add-row {
+        flex-direction: column;
+    }
+
+    .add-row input,
+    .add-row select,
+    .add-row button {
+        width: 100%;
+    }
+
+    li.task {
+        flex-wrap: wrap;
+    }
+}
